@@ -2,14 +2,18 @@
         
 import streamlit as st
 import time
-HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 import os
 from dotenv import load_dotenv
+
+load_dotenv()
+
+HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+
 from code_parser import parse_code
 from style_checker import show_style_corrected
 from error_detector import detect_errors
 from ai_suggester import get_ai_suggestions
-load_dotenv()
+
 
 def stream_data(text):
     """Yields text word by word for the typewriter effect."""
@@ -350,4 +354,5 @@ with tab2:
                 </p>
             </div>
         """, unsafe_allow_html=True)
+
 
