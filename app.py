@@ -2,6 +2,7 @@
         
 import streamlit as st
 import time
+HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 import os
 from dotenv import load_dotenv
 from code_parser import parse_code
@@ -349,3 +350,4 @@ with tab2:
                 </p>
             </div>
         """, unsafe_allow_html=True)
+
